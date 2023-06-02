@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+            
+            h1 {
+                color: #444444;
+                position: absolute;
+                top: 30px;
+                text-align: center;
+            }
+            
+            form {
+                text-align: center;
+            }
+            
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 25px;
+                color: grey;
+            }
+            
+            input[type="text"] {
+                width: 300px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #cccccc;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+            
+            button {
+                background-color: #243E36;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            
+            button:hover {
+                background-color: #243E36;
+            }
+            p {
+                font-size: 24px;
+                color: grey;
+            }
+            .hintButton {
+              position: absolute;
+              top: 50px;
+              right: 225px;
+            }
+            .hint{
+              position: absolute;
+              top: 100px;
+              right: 225px;
+            }
+            /* Dropdown Button */
+           /* Position the dropdown container */
+           .dropdown {
+  position: absolute;
+  top: 50px;
+  right: 75px;
+}
+
+
+/* Style the dropdown button */
+.dropbtn {
+  position: relative;
+  background-color: #243E36;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Position the dropdown content */
+.dropdown-content {
+  position: relative;
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #243E36;}
+
+.displayArea {
+    text-align: center;
+    color: #444444;
+    font-size: 50;
+}
+
+.counter {
+position: relative;
+top: 30px;
+left: 30px;
+color: #444444;
+font-size: 200;
+}
+        </style>
+        <body style="background-color: #F1F7ED;"></body>
+    </head>
+    <!--Links to scripts-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="game.JS"></script>
+  <script src="leaderboard.JS"></script>
+</head>
+    <body>
+       
+        <form>
+            
+            <p>What can you break, even if you never pick it up or touch it?</p>
+            <br>
+            <label for="guess">A</label>
+            <input type="text" id="guess" name="guess" required>
+            <br>
+            <button id="button" onclick="riddleOneAnswer(event)">OK</button>
+            <form onsubmit="riddleOneAnswer(event)">
+                <p id="displayArea"></p>
+               
+
+        </form>
+        <div class="dropdown" style="position : absolute;">
+            <button class="dropbtn" style="position : right;">Options</button>
+            <div class="dropdown-content">
+              <a href="riddles.HTML">Riddles</a>
+              <a href="leaderboard.HTML">leaderboard</a>
+              <a href="instruction.HTML">How to play</a>
+              <audio controls autoplay>
+                <source src="wii.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            
+        
+          </div>
+          <div class="counter" style="position: absolute;">
+            <label for="counter">score:</label>
+            <p id="counter"></p>
+        </div>
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">A promise is correct</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <form>
+                    <button type="button" onclick="moveToRiddleTwo()">Riddle 2</button>
+                  </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="hintButton" onclick="showText()">Hint</button>
+	<p id="hint" style="display: none;" class="hint">You give it to someone</p>
+          
+    </body>
+</html>

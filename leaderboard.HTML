@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      body {
+        background-color: #7CA982;
+      }
+      
+      h1 {
+        color: #F1F7ED;
+        text-align: center;
+      }
+      
+      button {
+        background-color: #243E36;
+        color: #F1F7ED;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      
+      th, td {
+        border: 1px solid #243E36;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      th {
+        background-color: #243E36;
+        color: #F1F7ED;
+      }
+
+      .dropdown {
+  position: absolute;
+  top: 50px;
+  right: 75px;
+}
+
+
+/* Style the dropdown button */
+.dropbtn {
+  position: relative;
+  background-color: #243E36;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Position the dropdown content */
+.dropdown-content {
+  position: relative;
+  display: none;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #243E36;}
+
+    </style>
+    <title>Leaderboard</title>
+  </head>
+  <body onload="displayLeaderboard()">
+    <h1>Leaderboard</h1>
+    <button onclick="clearLeaderboard()">Clear</button>
+    <table id="leaderboardTable"></table>
+    <script src="leaderboard.js"></script>
+
+    <div class="dropdown" style="position : absolute;">
+      <button class="dropbtn" style="position : right;">Options</button>
+      <div class="dropdown-content">
+        <a href="riddles.HTML">Riddles</a>
+        <a href="leaderboard.HTML">leaderboard</a>
+        <a href="instruction.HTML">How to play</a>
+      </div>
+  </body>
+</html>
