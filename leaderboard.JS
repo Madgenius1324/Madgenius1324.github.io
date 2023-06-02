@@ -10,7 +10,7 @@ function addToLeaderboard() {
     //Converts a JavaScript value to a JavaScript Object Notation (JSON) string and stores it in local storage
     localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
     console.log(leaderboard); // check the leaderboard array
-    window.location.href = "leaderboard.HTML";
+    window.location.href = "leaderboard.html";
   }
   // Displays the newly added name and score
 function displayLeaderboard() {
